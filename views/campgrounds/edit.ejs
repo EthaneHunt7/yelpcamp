@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate') %> 
+
+
+
+    
+    
+            
+    <h1 class="card-title card-header text-center" >EDIT CAMPGROUND</h1>
+    <!-- <form action="/campgrounds" method="POST" class="needs-validation" novalidate> -->
+      <form action="/campgrounds" method="POST" novalidate class="validated-form" enctype="multipart/form-data" >
+        
+            <div class="row mt-3 mb-3">
+              <label for="title" class="col-sm-2 col-form-label">TITLE</label>
+              <div class="col-sm-5">
+                <input type="text" id="title" value="<%=campground.title%>" name="campground[title]"class="form-control" required>
+                <div class="valid-feedback">
+                  Looks good!
+              </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="location" class="col-sm-2 col-form-label">LOCATION</label>
+              <div class="col-sm-5">
+                <input class="form-control" type="text" value="<%=campground.location%>"  id="location" name="campground[location]" required>
+                <div class="valid-feedback">
+                  Looks good!
+              </div>
+              </div>
+            </div>
+            <!-- <div class="row mb-3">
+                <label for="image" class="col-sm-2 col-form-label">IMAGE URL</label>
+                <div class="col-sm-5">
+                  <input type="text" id="image" value="<%=campground.image%>"name="campground[image]"class="form-control"required>
+                </div>
+              </div> -->
+
+              <div class="mb-3">
+                <div class="form-file custom-file">
+                    <input type="file" class="form-file-input" id="image" name="image" multiple>
+                    <label class="form-file-label" for="image">
+                        <span class="form-file-text custom-file-label">Add more image(s)...</span>
+                        <span class="form-file-button">Browse</span>
+                    </label>
+                </div>
+            </div>
+              <div class="mb-3">
+                
+                <div class="input-group ">
+                    <label class="form-label " for="price" style="padding-right: 35px;">CAMPGROUND PRICE</label>
+                    <span class="input-group-text" id="price-label">$</span>
+                        <div class="col-sm-1" >
+                    <input type="text" class="form-control col-sm-5" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="campground[price]" value="<%=campground.price%>" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                      </div>
+                      </div>
+            </div>
+                
+            </div>
+              <div class="row mb-3">
+                <label for="description" class="col-sm-2 col-form-label">DESCRIPTION</label>
+                <div class="col-sm-5">
+                  <textarea type="text" id="description" value="" name="campground[description]"class="form-control" required><%=campground.description%></textarea>
+                </div>
+              </div>
+            
+            <button type="submit" class="btn btn-info mt-5">UPDATE CAMPGROUND</button>
+          </form>
+       
+    <!-- <div>
+       <label for="title"> Title</label>
+        <input type="text" id="title" value="" name="campground[title]">
+    </div>
+<div>
+    <label for="location">location</label>
+    <input type="text"  id="location" name="campground[location]">
+    </div>
+    <button>submit</button> -->
+        
+    
+  <div class="mt-5 mb-3">
+    <section><a href="/campgrounds/<%=campground._id%>">CAMPGROUND-DATA</a></section>
+</div>
+   
+    <!-- <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+   
+    <div>
+       <label for="title"> Title</label>
+        <input type="text" id="title" value="<%=campground.title%>" name="campground[title]">
+    </div>
+    <div>
+    <label for="location">location</label>
+    <input type="text"  id="location" value="<%=campground.location%>" name="campground[location]">
+    </div>
+    <button>update campground</button>
+    
+    </form>
+    <section><a href="/campgrounds/<%=campground._id %>"> ALL CAMPGROUNDS</a></section> -->
+
+    
